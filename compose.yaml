@@ -1,0 +1,12 @@
+services:
+  shoplite:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SHOPLITE_DATABASE_URL: sqlite:///./data/shoplite.db
+      SHOPLITE_ENVIRONMENT: container
+    volumes:
+      - shoplite-data:/app/data
+volumes:
+  shoplite-data:
